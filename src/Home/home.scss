@@ -1,0 +1,50 @@
+.mv-card {
+  padding: 10px;
+}
+
+.mv-card-content {
+  height: 240px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.mv-card-title-box {
+  overflow: hidden;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mv-card-title {
+  font-size: 1.5em;
+  margin: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.mv-card-description {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+}
+
+.mv-card-cover-box {
+  position: relative;
+  padding-top: 150%;
+  display: block;
+}
+
+.mv-card-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
