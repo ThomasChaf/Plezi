@@ -2,8 +2,18 @@
   padding: 10px;
 }
 
+.mv-card.basic {
+  .mv-card-title {
+    color: #000;
+  }
+}
+.mv-card.light {
+  .mv-card-title {
+    color: #fff;
+  }
+}
+
 .mv-card-content {
-  height: 240px;
   overflow: hidden;
   position: relative;
   display: flex;
@@ -47,4 +57,5 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  background: #eee;
 }
