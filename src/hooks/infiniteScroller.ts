@@ -1,17 +1,17 @@
 import { useEffect } from "react";
-import debounce from "lodash/debounce";
+import throttle from "lodash/throttle";
 
 export const useInfiniteScroller = (cb: () => void) => {
-  const callback = debounce(cb, 400);
-
-  const handleScroll = debounce(() => {
-    if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight) return;
-
-    callback();
-  }, 100);
-
   useEffect(() => {
+    const callback = throttle(cb, 400, { leading: true, trailing: false });
+
+    const handleScroll = () => {
+      if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight) return;
+
+      callback();
+    };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [handleScroll]);
+  }, []);
 };
