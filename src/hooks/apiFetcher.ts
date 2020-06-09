@@ -46,7 +46,7 @@ export const useApiGetList = (path: string): [Movie[], () => void] => {
     fetch(`${BASE_API}${path}?api_key=${API_KEY}&page=${state.page}`)
       .then((res) => res.json())
       .then((nextMovies: ApiGetListResults) => setMovies(movies.concat(nextMovies.results)));
-  }, [state.page]);
+  }, [state.page]); // eslint-disable-line
 
   return [movies, nextPage];
 };
@@ -64,7 +64,7 @@ export const useApiQueryList = (path: string): [Movie[], (q: string) => void] =>
     fetch(`${BASE_API}${path}?api_key=${API_KEY}&query=${query}&include_adult={false}`)
       .then((res) => res.json())
       .then((nextMovies: ApiGetListResults) => setMovies(nextMovies.results));
-  }, [query]);
+  }, [query]); // eslint-disable-line
 
   return [movies, setQuery];
 };
@@ -76,7 +76,7 @@ export const useApiGet = (path: string): null | Movie => {
     fetch(`${BASE_API}${path}?api_key=${API_KEY}`)
       .then((res) => res.json())
       .then((nextMovie: ApiGetResults) => setMovie(nextMovie));
-  }, []);
+  }, [path]);
 
   return movie;
 };

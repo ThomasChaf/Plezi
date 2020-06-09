@@ -13,5 +13,5 @@ export const useInfiniteScroller = (cb: () => void) => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, []); // eslint-disable-line
 };

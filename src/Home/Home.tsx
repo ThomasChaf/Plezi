@@ -11,7 +11,7 @@ export const Home = () => {
 
   return (
     <div className="container">
-      <div className="row row-cols-4">
+      <div className="row row-cols-2 row-cols-md-4">
         {movies.map((movie) => (
           <Card key={movie.id} movie={movie} withDescription />
         ))}
